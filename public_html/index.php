@@ -1,8 +1,12 @@
 <?php
  
-    require_once(realpath(dirname(__FILE__) . "/../resources/config.php"));
+ include('resources/config.php');
+ include ('resources/templates/header.php');
+ include ('resources/templates/footer.php');
  
-    require_once(LIBRARY_PATH . "/templateFunctions.php");
+
+
+    // require_once(LIBRARY_PATH . "/templateFunctions.php");
  
     /*
         Now you can handle all your php logic outside of the template
@@ -16,6 +20,6 @@
         'setInIndexDotPhp' => $setInIndexDotPhp
     );
      
-    renderLayoutWithContentFile("home.php", $variables);
+    // renderLayoutWithContentFile("home.php", $variables);
  
 ?>
