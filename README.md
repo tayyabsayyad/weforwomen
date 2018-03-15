@@ -11,7 +11,7 @@ We are providing these features in our project:
 
 4. Donation webpage
 
-5. Investment webpage7
+5. Investment webpage
 
 6. Volunteer Webpage
 
