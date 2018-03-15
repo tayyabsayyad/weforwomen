@@ -34,6 +34,6 @@ We are providing these features in our project:
 15. Database for the whole project
 
 
-To Download the sql file(Database file) go to public_html\resources\references
+
 
 

@@ -1,0 +1,12 @@
+ include('resources/config.php');//to connect to database
+
+ include ('header.php');//starting		
+
+ include ('footer.php');//ending
+
+//all .css file should be stored in css folder
+<link rel="stylesheet" href="css/_____.css">
+
+
+// all the images should be kept in this folder that is img
+<img src="img/____.jpg"></img>
