@@ -1,0 +1,1 @@
+cause is added with datatype varchar(100) after duartion
