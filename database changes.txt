@@ -1,1 +1,10 @@
-cause is added with datatype varchar(100) after duartion
+cause is added with datatype varchar(100) after duartion in getsupport
+
+//database for contact form
+CREATE TABLE `contact_form` (
+  `name` text NOT NULL,
+  `surname` text NOT NULL,
+  `email` varchar(40) NOT NULL,
+  `phone` bigint(15) NOT NULL,
+  `message` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
