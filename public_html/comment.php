@@ -42,8 +42,7 @@ include ('header.php');
 if(isset($_POST["submit"]))
 {
  
- //Including dbconfig file.
-// include 'dbconfig.php';
+
  
 $name = $_POST["name"];
 $email = $_POST["email"];
