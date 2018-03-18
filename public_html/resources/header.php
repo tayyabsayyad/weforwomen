@@ -29,7 +29,7 @@
 			<div class="collapse navbar-collapse" id="#mainNavBar">
 				<ul class="nav navbar-nav">
 					<li><a href="PEFAC Design.html" id="blink" style="color:black;">Home</a></li>
-					<li><a href="about.html" id="blink" style="color:black;">About</a></li>
+					<li><a href="about.php" id="blink" style="color:black;">About</a></li>
 					<li><a href="donate.html" id="blink" style="color:black;">You Can</a></li>
 					<li><a href="donate.html" id="blink" style="color:black;">Initiatives</a></li>
 					<li><a href="contact.php" id="blink" style="color:black;">Contact Us</a></li>
