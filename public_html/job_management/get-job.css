@@ -1,0 +1,49 @@
+.job-content{
+    box-sizing:border-box;
+    border:1px solid black;
+    margin:10px;
+    border-radius:3px;
+    border:1px solid aqua;
+}
+.job-brief{
+    background-color:aliceblue;
+    padding:10px;
+    box-sizing: border-box;
+    border-radius:3px 3px 0 0;
+}
+.job-brief-bottom{
+    background-color:antiquewhite;
+    padding:10px;
+    border-radius:0 0 3px 3px;
+    position: relative;
+}
+.job-title{
+    text-transform:uppercase;
+    font-weight:bolder;
+    font-size:large;
+    
+}
+.job-provider{
+    color:#ff7800;
+    letter-spacing:1px;
+    font-size:15px;
+    margin-bottom:5px;
+    
+
+}
+.job-desc, .job-location, .job-duration{
+    color:#6c757d;
+    margin-bottom:5px;
+}
+.custom-apply-btn{
+    position:absolute;
+    right:30px;
+    bottom:4px;
+    padding:5px 20px;
+    transition: all 0.2s ease;
+}
+.custom-apply-btn:hover{
+   color: #337ab7;
+   background-color:white;
+   border-color:#337ab7;
+}
