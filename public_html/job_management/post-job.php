@@ -1,5 +1,5 @@
 <?php
- $con = mysqli_connect("localhost","root","oracle","weforwomen") or die("Unable to connect");
+ $con = mysqli_connect("localhost","root","","weforwomen") or die("Unable to connect");
 
 if(isset($_POST['submit']))
 {

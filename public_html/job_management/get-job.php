@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$con = mysqli_connect("localhost","root","oracle","weforwomen") or die("Unable to connect");
+$con = mysqli_connect("localhost","root","","weforwomen") or die("Unable to connect");
 $query = "select * from job_post order by job_post_id desc";
 $result = mysqli_query($con,$query);
 

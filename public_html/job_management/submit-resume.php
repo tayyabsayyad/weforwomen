@@ -21,7 +21,7 @@ else{
 }
 
 if(isset($_POST['submit'])){
-    $con = mysqli_connect("localhost","root","oracle","weforwomen") or die("Unable to connect");
+    $con = mysqli_connect("localhost","root","","weforwomen") or die("Unable to connect");
 
     $file = $_FILES['file'];
     $filename = $_FILES['file']['name'];
