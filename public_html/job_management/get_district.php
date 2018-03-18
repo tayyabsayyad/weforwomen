@@ -1,5 +1,6 @@
 <?php
-$con = mysqli_connect("localhost", "root", "", "weforwomen") or die("unable to connect");
+include('../resources/config.php');
+//$con = mysqli_connect("localhost", "root", "oracle", "weforwomen") or die("unable to connect");
 if(!empty($_POST["state_id"])) 
 {
 $query =mysqli_query($con,"SELECT * FROM district WHERE StCode = '" . $_POST["state_id"] . "'");

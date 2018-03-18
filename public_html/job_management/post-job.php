@@ -1,5 +1,7 @@
 <?php
- $con = mysqli_connect("localhost","root","","weforwomen") or die("Unable to connect");
+include('../resources/header.php');
+include('../resources/config.php');
+ //$con = mysqli_connect("localhost","root","oracle","weforwomen") or die("Unable to connect");
 
 if(isset($_POST['submit']))
 {
@@ -222,5 +224,8 @@ if(isset($_POST['submit']))
     $("#suggesstion-box").hide();
     }
 </script>
+<?php
+include('../resources/footer.php');
+?>
 </body>
 </html>
