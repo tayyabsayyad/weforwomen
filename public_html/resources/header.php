@@ -32,7 +32,7 @@
 					<li><a href="about.html" id="blink" style="color:black;">About</a></li>
 					<li><a href="donate.html" id="blink" style="color:black;">You Can</a></li>
 					<li><a href="donate.html" id="blink" style="color:black;">Initiatives</a></li>
-					<li><a href="donate.html" id="blink" style="color:black;">Contact Us</a></li>
+					<li><a href="contact.php" id="blink" style="color:black;">Contact Us</a></li>
 			</ul>
 			<!--right hand side options-->
 				<ul class="nav navbar-nav navbar-right">

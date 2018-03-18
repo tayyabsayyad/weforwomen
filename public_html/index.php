@@ -1,8 +1,8 @@
 <?php
  
  include('resources/config.php');
- include ('header.php');
- include ('footer.php');
+ include ('resources/header.php');
+ include ('resources/footer.php');
  
 
 

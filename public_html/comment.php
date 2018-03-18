@@ -1,7 +1,7 @@
 <?php
 
 include("resources/config.php");
-include ('header.php');
+include ('resources/header.php');
 ?>
 <!doctype html>
 <html>
@@ -96,7 +96,7 @@ if($result = mysqli_query($conn,$abc)){
         echo "No records matching your query were found.";
     }
 }
-include("footer.php");
+include("resources/footer.php");
  ?>
 </body>
 </html>

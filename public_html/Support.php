@@ -1,6 +1,6 @@
 <?php
 include("resources/config.php");
-include("header.php");
+include("resources/header.php");
 
 	if(isset($_POST['submit'])){
 
@@ -455,5 +455,5 @@ include("header.php");
 </html>
 
 <?php
-include("footer.php");
+include("resources/footer.php");
 ?>

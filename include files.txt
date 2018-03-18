@@ -1,8 +1,8 @@
  include('resources/config.php');//to connect to database
 
- include ('header.php');//starting		
+ include ('resources/header.php');//starting		
 
- include ('footer.php');//ending
+ include ('resources/footer.php');//ending
 
 //all .css file should be stored in css folder
 <link rel="stylesheet" href="css/_____.css">
