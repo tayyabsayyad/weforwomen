@@ -22,12 +22,12 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-<<<<<<< HEAD
+
 					<img src="../img/w4wbrand.png" class="navbar-brand" id="brand">
-=======
+
 				
 				<img src="../img/w4wbrand.png" class="navbar-brand" id="brand">
->>>>>>> 68229c3b4831c3f3dc7f01e9eaf9345238d6c967
+
 
 			</div>
 			<!--left hand side options-->

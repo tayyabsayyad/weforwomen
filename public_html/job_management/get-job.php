@@ -33,9 +33,11 @@ $result = mysqli_query($con,$query);
     foreach ($words as $val) {
         $conds1[] = " job_post_title LIKE '%".$val."%'";
         $conds11[] = " job_post_description LIKE '%".$val."%'";
+        $conds111[] = " job_post_skills LIKE '%".$val."%'";
     }
     $searchQuery1 .= implode(' OR ', $conds1);
-    $searchQuery1 .= " OR ".implode(' OR ', $conds11)." order by job_post_id desc";
+    $searchQuery1 .= " OR ".implode(' OR ', $conds11);
+    $searchQuery1 .= " OR ".implode(' OR ', $conds111)." order by job_post_id desc";
 
     // $searchQuery1 .= " AND job_post_exp >=".$experience." AND job_post_city = $city";
 
@@ -51,9 +53,11 @@ $result = mysqli_query($con,$query);
     foreach ($words2 as $val) {
         $conds2[] = " job_post_title LIKE '%".$val."%'";
         $conds22[] = " job_post_description LIKE '%".$val."%'";
+        $conds222[] = " job_post_skills LIKE '%".$val."%'";
     }
     $searchQuery2 .= implode(' OR ', $conds2);
     $searchQuery2 .= " OR ".implode(' OR ', $conds22);
+    $searchQuery2 .= " OR ".implode(' OR ', $conds222);
     $searchQuery2 .= $serachQuery2last;
     // $searchQuery2 .= ") AND (job_post_exp >=".$experience." OR job_post_city =".$city.")";
 
