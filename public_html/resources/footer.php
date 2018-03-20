@@ -22,8 +22,8 @@
 						<li id="list"><a id="list1" href="#">Donation</a></li>
 						<li id="list"><a id="list1" href="#">Investment</a></li>
 						<li id="list"><a id="list1" href="#">Volunteering</a></li>
-						<li id="list"><a id="list1" href="#">Get a Job</a></li>
-						<li id="list"><a id="list1" href="#">Post a Job</a></li>
+						<li id="list"><a id="list1" href="">Get a Job</a></li>
+						<li id="list"><a id="list1" href="../job_management/post-job.php">Post a Job</a></li>
 					</ul>
 				</div>
 				<div class="col-md-3 ">
@@ -37,7 +37,7 @@
 				</ul>
 			</div>
 			<div class="row">
-				<div id="l2" class="col-md-4 col-md-offset-1"> © 2018 Designed By Ischyro</div>
+				<div id="l2" class="col-md-3 col-md-offset-1"> © 2018 Designed By Ischyro</div>
 			</div>
   			 </div>
 

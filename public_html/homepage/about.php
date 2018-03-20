@@ -1,3 +1,8 @@
+<?php
+
+include("../resources/config.php");
+include ('../resources/header.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,48 +14,75 @@
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="../css/style.css">
+	
 </head>
+
+
 <body>
-	<nav class="navbar navbar-default" id="navigation">
-		<div class="container-fluid">
-			<!--meant for branding of the website-->
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavBar">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-<<<<<<< HEAD
-					<img src="../img/w4wbrand.png" class="navbar-brand" id="brand">
-=======
-				
-				<img src="../img/w4wbrand.png" class="navbar-brand" id="brand">
->>>>>>> 68229c3b4831c3f3dc7f01e9eaf9345238d6c967
+	
 
-			</div>
-			<!--left hand side options-->
-			<div class="collapse navbar-collapse" id="#mainNavBar">
-
-			<h4>
-				<ul class="nav navbar-nav">
-					<li><a href="homepage.php" id="blink" style="color:black;">Home</a></li>
-					<li><a href="about.php" id="blink" style="color:black;">About</a></li>
-					<li><a href="donate.html" id="blink" style="color:black;">You Can</a></li>
-					<li><a href="donate.html" id="blink" style="color:black;">Initiatives</a></li>
-					<li><a href="contact.php" id="blink" style="color:black;">Contact Us</a></li>
-			</ul>
-			</h4>
 			<!--right hand side options-->
-				<ul class="nav navbar-nav navbar-right">
-      		<li><button type="button" id="glyph" data-target="#myModal" data-toggle="modal"><span class="glyphicon glyphicon-user" style="color:#00e500;"></span></button> </li>
-    	</ul>
-			</div>
-		</div>
-	</nav>
+
+				
+
+	<!--pics-->
+
+				<div id="img_container">
+					<img src="support_01.png" style="width:100%;">
+						<h2 id="banner3">About Us </h2>
+					</div>
+
+          <div class="container">
+          
+<br>
+
+  C2C crowd sourcing platform for women empowerment - Smart India Hackathon Project<br><br>
+
+We are providing these features in our project:<br>
+<br>
+<ul type="box">
+<li>Homepage –Navigation bar Register Login Donate Invest Volunteer Contact Us About Us </li><br>
+
+<li>Aadhar Authentication</li><br> 
+
+<li>Like, Comment ,Share(all Social Media)</li><br>
+
+<li>Donation webpage</li><br>
+
+<li>Investment webpage</li><br>
+
+<li>Volunteer Webpage</li>
+<br>
+<li> a job webpage</li><br>
+
+<li>Post a job webpage</li><br>
+
+<li>Start a campaign/Movement</li><br>
+
+<li>Integration of Payment Gateway API</li><br>
+
+<li>User Profiles</li><br>
+
+<li>PAN (Tax Exemption)</li><br>
+
+<li>Session Handling</li>
+<br>
+<li>Dashboard</li><br>
+
+<li>Database for the whole project</li>
+</ul>
+          </div>
+
+<!-- footer code-->
+
+  
+
+</body>
+</html>
+
 <style>
-#bb{
+
 	margin-left: 120px;
 }
 #dope1{
@@ -76,19 +108,19 @@
 #blink{
 	margin-left: 30px;
 	padding-left: 80px;
-	font-family: 'Roboto', sans-serif;
+	font-family: roboto medium;
 }
 #blink1{
 	margin-left: 0px;
 	padding-top:7px;
-	font-family: 'Roboto', sans-serif;
+	font-family: roboto medium;
 	font-size: 30px;
 	color:black;
 }
 #blink2{
 	margin-left: 0px;
 	padding-top:7px;
-	font-family: 'Roboto', sans-serif;
+	font-family: roboto medium;
 	font-size: 30px;
 	color:black;
 	position: relative;
@@ -189,7 +221,7 @@
 #l2{
 	font-family: roboto thin;
 	font-size: 20px;
-	color:#black;
+	color:black;
 	top:210px;
 	left:450px;
 	font-weight: bold;
@@ -210,11 +242,11 @@
 #list{
 	list-style: none;
 }
-#list1{
+.list1{
 	text-align: center;
 	text-decoration: none;
 	color:black;
-	font-family: 'Roboto', sans-serif;
+	font-family: roboto light;
 	font-size:18px;
 	right:120px;
 }
@@ -252,7 +284,7 @@
 }
 #banner{
 	color:black;
-	font-family: 'Roboto', sans-serif;
+	font-family: roboto thin;
 	font-size: 135px;
 	position: absolute;
 	top:60px;
@@ -286,7 +318,7 @@
 	width:600px;
 }
 #head{
-		font-family: 'Roboto', sans-serif;
+		font-family: roboto medium;
 
 		font-size: 28px;
 		color:black;
@@ -300,12 +332,38 @@
 	box-shadow: 0px 5px 5px 0px;
 }
 #n{
-	font-family: 'Roboto', sans-serif;
+	font-family: roboto thin;
 	font-size: 18px;
 	color:white;
 	padding-top: 10px;
 }
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+h2
+{
+  text-align: center;
+  color: blue;
+}
+#para
+{
+  padding-left: 200px;
+  padding-right: 200px;
+  font-size: 20px;
+}
+#info
+{
+  font-size:25px;
+  color: red;
+}
+#banner3{
+ font-family:  'Tangerine', serif;
+  font-size: 100px;
+  position: absolute;
+  top:90px;
+  left:550px;
+  color:black;
+
+}
+
 	</style>
-</body>
-</html>
+<?php
+include("../resources/footer.php");
+?>
