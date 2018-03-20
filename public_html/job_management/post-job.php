@@ -75,12 +75,14 @@ if(isset($_POST['submit']))
                 <div class="form-group">
                     <label for="job-sector">job-field*</label>
                         <select class="form-control" name="job-sector" id="job-sector">
+                            <option value="">select</option>
                             <option value="Agriculture">Agriculture</option>
                             <option value="Manfacture">Manfacture</option>
                             <option value="Medicine">Medicine</option>
                             <option value="Business">Business</option>
-                            <option value="=Construction">Construction</option>
+                            <option value="Construction">Construction</option>
                             <option value="Textile">Textile</option>
+                            <option value="Information-Technology">Information Technology</option>
                             <option value="Other">Other</option>
                         </select>
                 </div>
