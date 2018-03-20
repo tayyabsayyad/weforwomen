@@ -12,14 +12,14 @@
 
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "oracle";
 $dbname="weforwomen";
 
 // Create connection
-$conn =mysqli_connect($servername, $username, $password,$dbname);
+$con =mysqli_connect($servername, $username, $password,$dbname);
 
 // Check connection
-if ($conn->connect_error) {
+if ($con->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 echo "Connected successfully";

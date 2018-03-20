@@ -22,7 +22,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<img src="img/w4wbrand.png" class="navbar-brand" id="brand">
+					<img src="../img/w4wbrand.png" class="navbar-brand" id="brand">
 
 			</div>
 			<!--left hand side options-->

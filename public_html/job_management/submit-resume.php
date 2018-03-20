@@ -1,6 +1,9 @@
 <?php
 session_start();
 $_SESSION['current_user_id'] = 1;
+
+
+
 // unset($_SESSION['current_user_id']);
 // unset($_SESSION['job_id']);
 if(isset($_SESSION['job_id'])){

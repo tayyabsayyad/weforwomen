@@ -75,10 +75,13 @@ if(isset($_POST['submit']))
                 <div class="form-group">
                     <label for="job-sector">job-field*</label>
                         <select class="form-control" name="job-sector" id="job-sector">
-                            <option value="Telecaller">Tellecaller</option>
-                            <option value="Receptionist">Receptionist</option>
-                            <option value="Professor">Professor</option>
-                            <option value="Computer Operator">Computer Operator</option>
+                            <option value="Agriculture">Agriculture</option>
+                            <option value="Manfacture">Manfacture</option>
+                            <option value="Medicine">Medicine</option>
+                            <option value="Business">Business</option>
+                            <option value="=Construction">Construction</option>
+                            <option value="Textile">Textile</option>
+                            <option value="Other">Other</option>
                         </select>
                 </div>
                 <div class="row">
@@ -124,7 +127,7 @@ if(isset($_POST['submit']))
                         <div class="form-group">
                             <label for="experience">Years of Experience*</label>
                             <select required class="form-control" name="experience" id="experience">
-                                <option value="Fresher">Fresher</option>
+                                <option value="0">Fresher</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
