@@ -22,18 +22,22 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<img src="img/w4wbrand.png" class="navbar-brand" id="brand">
+				
+				<img src="../img/w4wbrand.png" class="navbar-brand" id="brand">
 
 			</div>
 			<!--left hand side options-->
 			<div class="collapse navbar-collapse" id="#mainNavBar">
+
+			<h4>
 				<ul class="nav navbar-nav">
-					<li><a href="PEFAC Design.html" id="blink" style="color:black;">Home</a></li>
+					<li><a href="homepage.php" id="blink" style="color:black;">Home</a></li>
 					<li><a href="about.php" id="blink" style="color:black;">About</a></li>
 					<li><a href="donate.html" id="blink" style="color:black;">You Can</a></li>
 					<li><a href="donate.html" id="blink" style="color:black;">Initiatives</a></li>
 					<li><a href="contact.php" id="blink" style="color:black;">Contact Us</a></li>
 			</ul>
+			</h4>
 			<!--right hand side options-->
 				<ul class="nav navbar-nav navbar-right">
       		<li><button type="button" id="glyph" data-target="#myModal" data-toggle="modal"><span class="glyphicon glyphicon-user" style="color:#00e500;"></span></button> </li>

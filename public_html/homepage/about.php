@@ -1,49 +1,88 @@
+<?php
+
+include("../resources/config.php");
+include ('../resources/header.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-	<title>We4Women</title><div id="legal" class="row">
+	<title>We4Women</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="../css/style.css">
+	
 </head>
-<body>
-						<!-- <img id="logo" src="w4wbrand.png"> -->
-						<div class="col-md-3 col-md-offset-2">
-							<h2 id="head">&nbsp &nbsp Services</h2>
-						<ul>
-							<li id="list"><a id="list1" href="#">Donation</a></li>
-							<li id="list"><a id="list1" href="#">Investment</a></li>
-							<li id="list"><a id="list1" href="#">Volunteering</a></li>
-							<li id="list"><a id="list1" href="#">Get a Job</a></li>
-							<li id="list"><a id="list1" href="#">Post a Job</a></li>
-						</ul>
-					</div>
-					<div class="col-md-3 ">
-						<h2 id="head">&nbsp &nbsp Services</h2>
-					<ul>
-						<li id="list"><a id="list1" href="#">Donation</a></li>
-						<li id="list"><a id="list1" href="#">Investment</a></li>
-						<li id="list"><a id="list1" href="#">Volunteering</a></li>
-						<li id="list"><a id="list1" href="">Get a Job</a></li>
-						<li id="list"><a id="list1" href="../job_management/post-job.php">Post a Job</a></li>
-					</ul>
-				</div>
-				<div class="col-md-3 ">
-					<h2 id="head">&nbsp &nbsp Services</h2>
-				<ul>
-					<li id="list"><a id="list1" href="#">Donation</a></li>
-					<li id="list"><a id="list1" href="#">Investment</a></li>
-					<li id="list"><a id="list1" href="#">Volunteering</a></li>
-					<li id="list"><a id="list1" href="#">Get a Job</a></li>
-					<li id="list"><a id="list1" href="#">Post a Job</a></li>
-				</ul>
-			</div>
-			<div class="row">
-				<div id="l2" class="col-md-3 col-md-offset-1"> © 2018 Designed By Ischyro</div>
-			</div>
-  			 </div>
 
-  	</body>
+
+<body>
+	
+
+			<!--right hand side options-->
+
+				
+
+	<!--pics-->
+
+				<div id="img_container">
+					<img src="support_01.png" style="width:100%;">
+						<h2 id="banner3">About Us </h2>
+					</div>
+
+          <div class="container">
+          
+<br>
+
+  C2C crowd sourcing platform for women empowerment - Smart India Hackathon Project<br><br>
+
+We are providing these features in our project:<br>
+<br>
+<ul type="box">
+<li>Homepage –Navigation bar Register Login Donate Invest Volunteer Contact Us About Us </li><br>
+
+<li>Aadhar Authentication</li><br> 
+
+<li>Like, Comment ,Share(all Social Media)</li><br>
+
+<li>Donation webpage</li><br>
+
+<li>Investment webpage</li><br>
+
+<li>Volunteer Webpage</li>
+<br>
+<li> a job webpage</li><br>
+
+<li>Post a job webpage</li><br>
+
+<li>Start a campaign/Movement</li><br>
+
+<li>Integration of Payment Gateway API</li><br>
+
+<li>User Profiles</li><br>
+
+<li>PAN (Tax Exemption)</li><br>
+
+<li>Session Handling</li>
+<br>
+<li>Dashboard</li><br>
+
+<li>Database for the whole project</li>
+</ul>
+          </div>
+
+<!-- footer code-->
+
+  
+
+</body>
+</html>
+
 <style>
-#bb{
+
 	margin-left: 120px;
 }
 #dope1{
@@ -69,19 +108,19 @@
 #blink{
 	margin-left: 30px;
 	padding-left: 80px;
-	font-family: 'Roboto', sans-serif;
+	font-family: roboto medium;
 }
 #blink1{
 	margin-left: 0px;
 	padding-top:7px;
-	font-family: 'Roboto', sans-serif;
+	font-family: roboto medium;
 	font-size: 30px;
 	color:black;
 }
 #blink2{
 	margin-left: 0px;
 	padding-top:7px;
-	font-family: 'Roboto', sans-serif;
+	font-family: roboto medium;
 	font-size: 30px;
 	color:black;
 	position: relative;
@@ -203,11 +242,11 @@
 #list{
 	list-style: none;
 }
-#list1{
+.list1{
 	text-align: center;
 	text-decoration: none;
 	color:black;
-	font-family: 'Roboto', sans-serif;
+	font-family: roboto light;
 	font-size:18px;
 	right:120px;
 }
@@ -245,7 +284,7 @@
 }
 #banner{
 	color:black;
-	font-family: 'Roboto', sans-serif;
+	font-family: roboto thin;
 	font-size: 135px;
 	position: absolute;
 	top:60px;
@@ -279,7 +318,7 @@
 	width:600px;
 }
 #head{
-		font-family: 'Roboto', sans-serif;
+		font-family: roboto medium;
 
 		font-size: 28px;
 		color:black;
@@ -293,11 +332,38 @@
 	box-shadow: 0px 5px 5px 0px;
 }
 #n{
-	font-family: 'Roboto', sans-serif;
+	font-family: roboto thin;
 	font-size: 18px;
 	color:white;
 	padding-top: 10px;
 }
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+h2
+{
+  text-align: center;
+  color: blue;
+}
+#para
+{
+  padding-left: 200px;
+  padding-right: 200px;
+  font-size: 20px;
+}
+#info
+{
+  font-size:25px;
+  color: red;
+}
+#banner3{
+ font-family:  'Tangerine', serif;
+  font-size: 100px;
+  position: absolute;
+  top:90px;
+  left:550px;
+  color:black;
+
+}
+
 	</style>
-</html>
+<?php
+include("../resources/footer.php");
+?>
