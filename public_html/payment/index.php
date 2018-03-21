@@ -23,11 +23,11 @@ require_once("dbconfig.php");
 <script
     src="https://checkout.razorpay.com/v1/checkout.js"
     data-key="<?php echo $razor_api_key;?>"
-    data-amount="1000"
+    data-amount="100000"
     data-buttontext="Click for payment"
     data-name="We For Women"
     data-description="payment"
-    data-image="https://your-awesome-site.com/your_logo.jpg"
+    data-image="../img/w4wbrand"
     data-prefill.name="Yash Agarwal"
     data-prefill.email="support@WeForWomen.com"
     data-theme.color="blue"
