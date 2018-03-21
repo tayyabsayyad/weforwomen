@@ -10,6 +10,10 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+
+
+		
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -21,25 +25,26 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
+						
 					</button>
+			
 
-					<img src="../img/w4wbrand.png" class="navbar-brand" id="brand">
-
-				
-				<img src="../img/w4wbrand.png" class="navbar-brand" id="brand">
+						<img src="../img/w4wbrand.png" class="navbar-brand" id="brand"  >
+			
 
 
 			</div>
+
 			<!--left hand side options-->
 			<div class="collapse navbar-collapse" id="#mainNavBar">
 
 			<h4>
 				<ul class="nav navbar-nav">
 					<li><a href="homepage.php" id="blink" style="color:black;">Home</a></li>
-					<li><a href="about.php" id="blink" style="color:black;">About</a></li>
+					<li><a href="../homepage/about.php" id="blink" style="color:black;">About</a></li>
 					<li><a href="donate.html" id="blink" style="color:black;">You Can</a></li>
 					<li><a href="donate.html" id="blink" style="color:black;">Initiatives</a></li>
-					<li><a href="contact.php" id="blink" style="color:black;">Contact Us</a></li>
+					<li><a href="../homepage/contact.php" id="blink" style="color:black;">Contact Us</a></li>
 			</ul>
 			</h4>
 			<!--right hand side options-->
@@ -50,7 +55,7 @@
 		</div>
 	</nav>
 <style>
-#bb{
+/*#bb{
 	margin-left: 120px;
 }
 #dope1{
@@ -94,7 +99,8 @@
 	position: relative;
 }
 #brand{
-	margin-left: 80px;
+	margin-left: 20px;
+
 }
 
 #dope1{
@@ -305,7 +311,7 @@
 	color:white;
 	padding-top: 10px;
 }
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Roboto');*/
 	</style>
 </body>
 </html>

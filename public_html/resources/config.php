@@ -12,7 +12,7 @@
 
 $servername = "localhost";
 $username = "root";
-$password = "oracle";
+$password = "";
 $dbname="weforwomen";
 
 // Create connection

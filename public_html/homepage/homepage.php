@@ -103,7 +103,7 @@
 <?php
 
 include('../resources/config.php');
- include ('../resources/header.php');
+ 
 
  
 ?>
@@ -116,8 +116,8 @@ include('../resources/config.php');
 	<title></title>
 	<meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <meta name="description" content="Circle Hover Effects with CSS Transitions" />
+		<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> --> 
+       	 <meta name="description" content="Circle Hover Effects with CSS Transitions" />
         <meta name="keywords" content="circle, border-radius, hover, css3, transition, image, thumbnail, effect, 3d" />
         <meta name="author" content="Codrops" />
         <link rel="shortcut icon" href="../favicon.ico"> 
@@ -129,6 +129,9 @@ include('../resources/config.php');
 </head>
 <body>
 
+<?php
+include ('../resources/header.php');
+?>
 
 
 	<!-- modal code-->
@@ -545,8 +548,8 @@ include('../resources/config.php');
 								<div class="ch-info">
 									<div class="ch-info-front ch-img-1" style="background-image: url(images/16.jpg);"></div>
 									<div class="ch-info-back">
-										<h1 style="color:blue;">DONATE</h1>
-										
+										<h3 style="color:blue;font-weight: bold;">DONATE</h3>
+										<p><a href="donate.php" style="color: red; font-size: 15px;">CLICK HERE TO DONATE</a></p>
 									</div>	
 								</div>
 							</div>
@@ -558,8 +561,8 @@ include('../resources/config.php');
 								<div class="ch-info">
 									<div class="ch-info-front ch-img-2" style="background-image: url(images/17.jpg);"></div>
 									<div class="ch-info-back">
-										<h1 style="color:blue;">INVEST</h1>
-										
+										<h3 style="color:blue;font-weight: bold;">INVEST</h3>
+										<p><a href="invest.php" style="color: red; font-size: 15px;">CLICK HERE TO INVEST</a></p>
 									</div>
 								</div>
 							</div>
@@ -571,8 +574,8 @@ include('../resources/config.php');
 								<div class="ch-info">
 									<div class="ch-info-front ch-img-3" style="background-image: url(images/18.jpg);"></div>
 									<div class="ch-info-back">
-										<h1 style="color:blue;">VOLUNTEER</h1>
-										
+										<h3 style="color:blue;font-weight: bold;">VOLUNTEER</h3>
+										<p><a href="invest.php" style="color: red; font-size: 15px;">CLICK HERE TO VOLUNTEER</a></p>
 									</div>
 								</div>
 							</div>
@@ -584,8 +587,8 @@ include('../resources/config.php');
 								<div class="ch-info">
 									<div class="ch-info-front ch-img-4" style="background-image: url(images/19.jpg);"></div>
 									<div class="ch-info-back">
-										<h1 style="color:blue;">GET JOB</h1>
-						
+										<h3 style="color:blue;font-weight: bold;">GET JOB</h3>
+										<p><a href="invest.php" style="color: red; font-size: 15px;">CLICK HERE TO GET JOB</a></p>
 									</div>
 								</div>
 							</div>
@@ -597,8 +600,8 @@ include('../resources/config.php');
 								<div class="ch-info">
 									<div class="ch-info-front ch-img-5" style="background-image: url(images/20.jpg);"></div>
 									<div class="ch-info-back">
-										<h1 style="color:blue;">POST JOB</h1>
-									
+										<h3 style="color:blue;font-weight: bold;">POST JOB</h3>
+										<p><a href="invest.php" style="color: red; font-size: 15px;">CLICK HERE TO POST JOB</a></p>
 									</div>
 								</div>
 							</div>
@@ -705,8 +708,8 @@ $(document).ready(function(){
 	position: relative;
 }
 #brand{
-	margin-left: 80px;
-}
+	margin-left: 20px;
+	}
 
 #dope1{
 	font-size:120px;
