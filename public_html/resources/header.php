@@ -26,8 +26,7 @@
 					<img src="../img/w4wbrand.png" class="navbar-brand" id="brand">
 
 				
-				<img src="../img/w4wbrand.png" class="navbar-brand" id="brand">
-
+				
 
 			</div>
 			<!--left hand side options-->

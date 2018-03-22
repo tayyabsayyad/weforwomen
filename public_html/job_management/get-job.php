@@ -3,8 +3,7 @@ session_start();
 include('../resources/config.php');
 
 //$con = mysqli_connect("localhost","root","oracle","weforwomen") or die("Unable to connect");
-$query = "select * from job_post order by job_post_id desc";
-$result = mysqli_query($con,$query);
+
 
 
 ////////////////////////////////////
@@ -190,7 +189,7 @@ include('../resources/header.php');
                     <div class="col-sm-3" style="position:relative;">
                         <button style="position:absolute;top:24px;" class="btn btn-success" type="submit" id="submit2" name="submit2"> Search</button>
                     </div>
-                    <br/><br/>
+                    <br/><br/><br/>
                 </div>
             </form>
         </div>
@@ -213,13 +212,14 @@ include('../resources/header.php');
 
         $time = substr($rows1['job_post_start_time'],0,10);
 
+        // job organisation and individual has to be managed
 
         $job_box = "<div class=\"row\">
         <div class=\"col-sm-offset-2 col-sm-8\">
             <div class=\"job-content\">
                 <div class=\"job-brief\">
                     <div class=\"job-title\">".$rows1['job_post_title']."</div>
-                    <div class=\"job-provider\">".$rows1['job_post_org']."</div>
+                    <div class=\"job-provider\">".$rows1['job_post_org_id']."</div>    
                     <div class=\"job-desc\">".$rows1['job_post_description']."</div>
                     <div class=\"job-desc\">Skills : ".$rows1['job_post_skills']."</div>
                     <div class=\"job-location\">".$cityName[0].', '.$stateName[0]."</div>
@@ -248,13 +248,14 @@ include('../resources/header.php');
 
         $time = substr($rows2['job_post_start_time'],0,10);
 
+        // job organisation and individual has to be managed
 
         $job_box = "<div class=\"row\">
         <div class=\"col-sm-offset-2 col-sm-8\">
             <div class=\"job-content\">
                 <div class=\"job-brief\">
                     <div class=\"job-title\">".$rows2['job_post_title']."</div>
-                    <div class=\"job-provider\">".$rows2['job_post_org']."</div>
+                    <div class=\"job-provider\">".$rows2['job_post_org_id']."</div>     
                     <div class=\"job-desc\">".$rows2['job_post_description']."</div>
                     <div class=\"job-desc\">Skills : ".$rows2['job_post_skills']."</div>
                     <div class=\"job-location\">".$cityName[0].', '.$stateName[0]."</div>
