@@ -83,8 +83,6 @@ We are providing these features in our project:<br>
 
 <style>
 
-	margin-left: 120px;
-}
 #dope1{
 	position: relative;
 	font-size:65px;

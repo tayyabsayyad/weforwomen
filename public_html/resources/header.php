@@ -35,17 +35,7 @@
 
 
 
-						<li>
-						<li><a href="about.php" id="blink" style="color:black;">You can</a></li>
-							<!-- <div class="dropdown" style="float: right">
-						    	<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">You Can
-						    	<span class="caret"></span></button>
-								<ul class="dropdown-menu" style="position:absolute;right:0px">
-						    	  <li><a href="#">Get a Job</a></li>
-						      	<li><a href="#">Post a Job</a></li>
-						      </ul>
-							</div> -->
-						</li>
+						<li><a href="youcan.php" id="blink" style="color:black;">You Can</a></li>
 						
 
 						<li><a href="donate.html" id="blink" style="color:black;">Initiatives</a></li>
@@ -72,6 +62,7 @@
 		</div>
 	</nav>
 	<style type="text/css">
+		
 		#bb{
 			margin-left: 120px;
 		}

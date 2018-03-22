@@ -4,7 +4,7 @@
 //session_start();
 
 if (isset($_POST['submit'])) {
-	$con = mysqli_connect('localhost','root',"","aadhar");
+	$con = mysqli_connect('localhost','root','','aadhar');
 	if(!$con){
 		echo '<script type="text/javascript">alert("Connection Not Established"); </script>'; 
 	}
@@ -57,17 +57,6 @@ if (isset($_POST['submit'])) {
 }
 
 ?>
-
-
-
-
-
-
-
-
-
-
-
 
 
 
