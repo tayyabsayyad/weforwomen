@@ -28,11 +28,16 @@
 			<!--left hand side options-->
 			<div class="collapse navbar-collapse" id="#mainNavBar">
 
+<<<<<<< HEAD
+				
+				
+=======
 				<h4>
 					<ul class="nav navbar-nav">
 						<li><a href="index.php" id="blink" style="color:black;">Home</a></li>
 						<li><a href="about.php" id="blink" style="color:black;">About</a></li>
 
+>>>>>>> 5b0b3dbc7bd2bfb8999ddb29f7cf726bb9972047
 
 
 						<li><a href="youcan.php" id="blink" style="color:black;">You Can</a></li>

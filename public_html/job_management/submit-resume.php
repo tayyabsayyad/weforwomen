@@ -54,7 +54,7 @@ if(isset($_POST['submit'])){
         </script>";
     }
 
-    $query = "insert into job_application(user_id, job_post_id, job_app_resume_dir, job_app_message) values($user_id, $job_post_id, '$fileDestination', '$message')";
+    $query = "insert into job_application(job_app_user_id,job_app_org_id, job_post_id, job_app_resume_dir, job_app_message) values(0, 1, $job_post_id,'$fileDestination', '$message')";
     $result = mysqli_query($con, $query);
     if($result){
         echo "<script type='text/javascript'>alert('Resume Submitted Succesfully !!!');</script>";

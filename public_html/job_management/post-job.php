@@ -21,7 +21,8 @@ if(isset($_POST['submit']))
 
 
     $job_title = mysqli_real_escape_string($con, $_POST['job-title']);
-    $organisation = mysqli_real_escape_string($con, $_POST['organisation']);
+    $organisation_id = 1;
+    $user_id = 0;
     $job_sector = $_POST['job-sector'];  //field = sector
     $job_desc = mysqli_real_escape_string($con, $_POST['job-desc']);
     $state = $_POST['state'];
@@ -33,7 +34,7 @@ if(isset($_POST['submit']))
     $vacancy = $_POST['vacancy'];
     // $job_type = $_POST['job-type'];
 
-    $query = "INSERT INTO job_post(job_post_title,job_post_org,job_post_sector, job_post_description, job_post_state,job_post_city,job_post_skills ,job_post_exp, job_post_salary, job_post_duration, job_post_vacancy, job_post_user_id) VALUES ('$job_title', '$organisation','$job_sector', '$job_desc', $state, $city,'$skills', $experience ,$salary, $duration,$vacancy, 1)";
+    $query = "INSERT INTO job_post(job_post_user_id,job_post_org_id,job_post_title,job_post_sector, job_post_description, job_post_state,job_post_city,job_post_skills ,job_post_exp, job_post_salary, job_post_duration, job_post_vacancy) VALUES ($user_id, $organisation_id,'$job_title','$job_sector', '$job_desc', $state, $city,'$skills', $experience ,$salary, $duration,$vacancy)";
 
     $result = mysqli_query($con, $query);
     if($result){
@@ -69,7 +70,7 @@ if(isset($_POST['submit']))
                 </div>                
                 <div class="form-group">
                     <label for="organisation">Organisation Name*</label>
-                    <input type="text" class="form-control" name="organisation" id="organisation" required>
+                    <input type="text" class="form-control" name="organisation" id="organisation" placeholder="some organisation" disabled>
                 </div>
 
                 <div class="form-group">
