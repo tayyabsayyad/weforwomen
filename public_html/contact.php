@@ -1,7 +1,7 @@
 <?php
 
-include("../resources/config.php");
-include ('../resources/header.php');
+include("resources/config.php");
+include ('resources/header.php');
 ?>
 <html>
     <head>
@@ -10,7 +10,7 @@ include ('../resources/header.php');
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
-        <link href='../scss/custom.css' rel='stylesheet' type='text/css'>
+        <link href='scss/custom.css' rel='stylesheet' type='text/css'>
 
         <style type="text/css">
           .text-muted
@@ -125,12 +125,12 @@ $message = $_POST["message"];
 $sql = "INSERT INTO contact_form(name,surname,email,phone,message) VALUES ('$name','$surname','$email',$phone,'$message')"; 
 
 //echo '<center> Comment Successfully Submitted </center>';
-if ($conn->query($sql) === TRUE) {
+if ($con->query($sql) === TRUE) {
     echo '<script type="text/javascript">alert("Inserted Successfully")</script>';
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
 }
-include("../resources/footer.php");
+include("resources/footer.php");
 ?>

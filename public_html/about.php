@@ -1,7 +1,7 @@
 <?php
 
-include("../resources/config.php");
-include ('../resources/header.php');
+include("resources/config.php");
+include ('resources/header.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +14,7 @@ include ('../resources/header.php');
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="css/style.css">
 	
 </head>
 
@@ -54,11 +54,11 @@ We are providing these features in our project:<br>
 
 <li>Volunteer Webpage</li>
 <br>
-<li> a job webpage</li><br>
+<li> A Job Webpage</li><br>
 
-<li>Post a job webpage</li><br>
+<li>Post a Job Webpage</li><br>
 
-<li>Start a campaign/Movement</li><br>
+<li>Start a Campaign/Movement</li><br>
 
 <li>Integration of Payment Gateway API</li><br>
 
@@ -365,5 +365,5 @@ h2
 
 	</style>
 <?php
-include("../resources/footer.php");
+include("resources/footer.php");
 ?>
