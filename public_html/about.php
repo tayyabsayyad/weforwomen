@@ -1,7 +1,6 @@
 <?php
 
 include("resources/config.php");
-include ('resources/header.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +20,9 @@ include ('resources/header.php');
 
 <body>
 	
-
+<?php
+include ('resources/header.php');
+?> 
 			<!--right hand side options-->
 
 				

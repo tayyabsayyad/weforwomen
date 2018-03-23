@@ -269,6 +269,10 @@ $(document).ready(function(){
 });
 </script> -->
 <style>
+.container-fluid{
+	margin:0px;
+	border:0px;
+}
 #bb{
 	margin-left: 120px;
 }
