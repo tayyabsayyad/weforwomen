@@ -1,9 +1,8 @@
-
 <?php
 session_start();
 
 if (isset($_POST['submit'])) {
-	$con = mysqli_connect('localhost','root',"","aadhar");
+	$con = mysqli_connect('localhost','root',"","weforwomen");
 	if(!$con){
 		echo '<script type="text/javascript">alert("Connection Not Established"); </script>'; 
 	}
@@ -38,31 +37,53 @@ if (isset($_POST['submit'])) {
 
 
 
-	$sql = "SELECT * from aadhar ";
-	$query_run = mysqli_query($con, $sql);
-	if($query_run){
 
-		while( $rows = mysqli_fetch_array($query_run))
-		{
-			$u = $rows['UID'];
-			$n = $rows['name'];
-			$m = $rows['mobile'];
-			if($pssword == $cpassword)
-			{						
-					$sql1 = "INSERT INTO organization VALUES('$orgusername','$orgname','$empid','$cuntry','$lcation',$pin,$license,$gst,$cst,$wct,'$pan','$contact1',  '$contact2','$contact3','$pssword','$eail','$orgdes','$orgtype')";
+	if($cpassword == $pssword){
 
-					$query_run2 = mysqli_query($con, $sql1);
-					
-					if($query_run2){
-						echo '<script type="text/javascript">alert("User registered"); </script>';
-					}else{
-						echo '<script type="text/javascript">alert("User not registered"); </script>';
-					}				
-			}else{
-				echo '<script type="text/javascript">alert("Please Enter Valid Credentials"); </script>';
-			}
+		$sql2 = "SELECT * from organization where org_username = '$orgusername'";
+				$query_run2 = mysqli_query($con, $sql2);
+				if(mysqli_num_rows($query_run2)>0){
+					echo '<script type=text/javascript>alert("User already exixts");</script>';
+				}else{
+
+		$sql = "INSERT INTO organization(org_username,org_name,emp_id,org_country,org_location,org_pin,org_license_no,org_gstn_no,org_cstn_no,org_wct_no,org_pan,org_contact_no1,org_contact_no2,org_contact_no3,org_password,org_email,org_description,org_type) VALUES('$orgusername','$orgname','$empid','$cuntry','$lcation',$pin,$license,$gst,$cst,$wct,'$pan','$contact1',  '$contact2','$contact3','$pssword','$eail','$orgdes','$orgtype')";		
+
+		$query_run = mysqli_query($con, $sql);
+		if($query_run){
+			echo '<script type="text/javascript">alert("User registered"); </script>';
+		}else{
+				echo '<script type="text/javascript">alert("User not registered"); </script>';
 		}
+	}}else{
+		echo '<script type="text/javascript">alert("Please Enter Valid Credentials"); </script>';
+
 	}
+
+	// $sql = "SELECT * from aadhar ";
+	// $query_run = mysqli_query($con, $sql);
+	// if($query_run){
+
+	// 	while( $rows = mysqli_fetch_array($query_run))
+	// 	{
+	// 		$u = $rows['UID'];
+	// 		$n = $rows['name'];
+	// 		$m = $rows['mobile'];
+	// 		if($pssword == $cpassword)
+	// 		{						
+	// 				$sql1 = "INSERT INTO organization(org_username,org_name,emp_id,org_country,org_location,org_pin,org_license_no,org_gstn_no,org_cstn_no,org_wct_no,org_pan,org_contact_no1,org_contact_no2,org_contact_no3,org_password,org_email,org_description,org_type) VALUES('$orgusername','$orgname','$empid','$cuntry','$lcation',$pin,$license,$gst,$cst,$wct,'$pan','$contact1',  '$contact2','$contact3','$pssword','$eail','$orgdes','$orgtype')";
+
+	// 				$query_run2 = mysqli_query($con, $sql1);
+					
+	// 				if($query_run2){
+	// 					echo '<script type="text/javascript">alert("User registered"); </script>';
+	// 				}else{
+	// 					echo '<script type="text/javascript">alert("User not registered"); </script>';
+	// 				}				
+	// 		}else{
+	// 			echo '<script type="text/javascript">alert("Please Enter Valid Credentials"); </script>';
+	// 		}
+	// 	}
+	 // }
 }
 
 ?>

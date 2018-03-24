@@ -1,13 +1,12 @@
-
 <?php
 session_start();
 
 if (isset($_POST['submit'])) {
-	$con = mysqli_connect('localhost','root',"","weforwomen");
+	$con = mysqli_connect('localhost','root','','weforwomen');
 	if(!$con){
 		echo '<script type="text/javascript">alert("Connection Not Established"); </script>';  
 	}
-	$username = $_POST['username'];
+	$username = $_POST['name'];
 	$pssword = $_POST['pwd'];
 	// $mobile= $_POST['mobile'];
 	$sql = "SELECT * from organization where  org_username = '$username' && org_password = '$pssword'";
@@ -18,10 +17,33 @@ if (isset($_POST['submit'])) {
 		{
 			// $u = $rows['UID'];
 			// $n = $rows['name'];
-			 $p = $rows['user_password'];
+			 $p = $rows['org_password'];
 			 if($p == $pssword)
 			 {
-			 	echo '("User registered")';
+
+
+			 	$_SESSION['current_org_id']= $rows['org_id'];
+			 	$_SESSION['username'] = $rows['org_username'];
+
+
+			 	$abc = $rows['org_id'];
+
+			 	$sql2 = "INSERT into sessions(org_id) values($abc)";
+
+			 	$result = mysqli_query($con,$sql2);
+			 	if($result)
+			 	{
+
+			 		echo '<script type="text/javascript">alert("Login Sucessfull");
+
+									window.location="../index.php"
+
+								 </script>';
+			 	}
+			 	else
+			 		echo "dddssdsf";
+
+			 			
 			 }
 			 else
 			 {
@@ -111,7 +133,7 @@ if (isset($_POST['submit'])) {
 
 			<h1 style="text-align:center">LOGIN</h1>
 							<br>
-							 <form class="form-horizontal" role="form" method="post" action="login.php">
+							 <form class="form-horizontal" role="form" method="post" action="orglogin.php">
 							
 								<div class="form-group">
 									<label class="control-label col-sm-4" for="name">Username:</label>

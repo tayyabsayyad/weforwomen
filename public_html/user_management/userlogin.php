@@ -1,16 +1,20 @@
-
 <?php
 session_start();
+ // unset($_SESSION['current_user_id']);
+// if(isset($_SESSION['current_user_id'])){
+// 	header('Location:signup1.php');
+// 	exit();
+// }
 
 if (isset($_POST['submit'])) {
 	$con = mysqli_connect('localhost','root',"","weforwomen");
 	if(!$con){
 		echo '<script type="text/javascript">alert("Connection Not Established"); </script>'; 
 	}
-	$username = $_POST['username'];
+	$username = $_POST['name'];
 	$pssword = $_POST['pwd'];
 	// $mobile= $_POST['mobile'];
-	$sql = "SELECT * from userregister where  username = '$username' && password = '$pssword'";
+	$sql = "SELECT * from register where  user_username = '$username' && user_password = '".$pssword."'";
 	$query_run = mysqli_query($con, $sql);
 	if($query_run){
 
@@ -21,11 +25,30 @@ if (isset($_POST['submit'])) {
 			 $p = $rows['user_password'];
 			 if($p == $pssword)
 			 {
-			 	echo '("User registered")';
+// 
+			 	$_SESSION['current_user_id']= $rows['user_id'];
+			 	$_SESSION['username'] = $rows['user_username'];
+
+			 	$abc = $rows['user_id'];
+
+			 	$sql2 = "INSERT into sessions(user_id) values($abc)";
+
+			 	$result = mysqli_query($con,$sql2);
+			 	if($result)
+			 	{
+			 		echo '<script type="text/javascript">alert("Login Sucessfull");
+
+									window.location="../index.php"
+
+								 </script>';
+			 	}
+			 	else
+			 		echo "dddssdsf";
+						
 			 }
-			 else
+			 elseif($p != $pssword)
 			 {
-			 	echo '<script type="text/javascript">alert("User not registered"); </script>';
+			 	echo "<script>alert('User not registered'); </script>";
 			 }
 			// if($u == $uid && $pssword == $cpassword)
 			// {						
@@ -46,20 +69,6 @@ if (isset($_POST['submit'])) {
 }
 
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -99,8 +108,8 @@ if (isset($_POST['submit'])) {
 			</ul>
 			<!--right hand side options-->
 				<ul class="nav navbar-nav navbar-right">
-      		<li><a href="signup.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      		<li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      		<li><a href="signup1.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      		<li><a href="userlogin.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
     	</ul>
 			</div>
 		</div>
@@ -111,7 +120,7 @@ if (isset($_POST['submit'])) {
 
 			<h1 style="text-align:center">LOGIN</h1>
 							<br>
-							 <form class="form-horizontal" role="form" method="post" action="login.php">
+							 <form class="form-horizontal" role="form" method="post" action="userlogin.php">
 							
 								<div class="form-group">
 									<label class="control-label col-sm-4" for="name">Username:</label>
@@ -143,7 +152,7 @@ if (isset($_POST['submit'])) {
 		        						<input type="number" maxlength="12"  class="form-control" id="mobile" placeholder="Enter your registered Mobile number" name="mobile">
 		      						</div>		
 						    </div>
- --> -->
+ -->
 								<div class="form-group">
 									<label class="control-label col-sm-4" for="pwd">Password:</label>
 									<div class="col-sm-4">

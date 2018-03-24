@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,20 +53,52 @@
 	<li><a href="/weforwomen/public_html/contact.php">Contact Us</a></li>
 	</ul>
 
-	<div class="dropdown" style="float: right">
+	<div id="notloggedin" class="dropdown" style="float: right">
 				    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Login/Signup
 				    <span class="caret"></span></button>
 				    <ul class="dropdown-menu" style="position:absolute;right:0px">
 				      <li><a href="user_management/orgregister.php">Signup as Organization</a></li>
-				      <li><a href="user_management/signup.php">Signup as Individual</a></li>
+				      <li><a href="user_management/signup1.php">Signup as Individual</a></li>
 				      <li><a href="user_management/orglogin.php">Login as Organization</a></li>
 				      <li><a href="user_management/userlogin.php">Login as Individual</a></li>
 				    </ul>
-				</div>
+	</div>
+
+	<div id="loggedin" style="float: right">
+		<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><img src="icon_user.png" alt="Profile image" class="img-circle" /><span class="caret"></span></button>
+		<ul class="dropdown-menu" style="position:absolute;right:0px">
+				      <li><a href="dashboard.php">Dashboard</a></li>
+				      <li><a href="./logout.php" class="btn btn-danger">Logout</a></li>
+		</ul>
+	</div>
 
 
   </div>
 </nav>
+<?php
+echo "<pre>";
+print_r($_SESSION);
+echo "</pre>";
+?>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script type="text/javascript">
+		<?php 
+		if(isset($_SESSION['username'])){
+
+		?>
+				$("#notloggedin").hide();
+		        $("#loggedin").show();
+		<?php
+		    }else{
+		?>
+		    	$("#notloggedin").show();
+		        $("#loggedin").hide();
+		<?php
+		    } 		
+		?>
+
+	</script>
+	
 
 </body>
 </html>
