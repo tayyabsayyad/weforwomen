@@ -1,10 +1,9 @@
 <?php
-// session_start();
-// unset($_SESSION['username']);
-// unset($_SESSION['current_user_id']);
-// session_destroy();
+session_start();
+session_unset();
+session_destroy();
 
-// $_SESSION = array();
+
 header("Location: index.php");
-
+exit();
 ?>

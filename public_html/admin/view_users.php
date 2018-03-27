@@ -53,7 +53,8 @@
             <th>User Name</th>  
             <th>User E-mail</th>  
             <th>User Pass</th>  
-            <th>Delete User</th>  
+            <th>Delete User</th>
+            <th>Update User</th>  
         </tr>  
         </thead>  
   
@@ -79,11 +80,12 @@
             <td><?php echo $user_username;  ?></td>  
             <td><?php echo $user_email;  ?></td>  
             <td><?php echo $user_password;  ?></td>  
-            <td><a href="delete.php?del=<?php echo $user_id ?>"><button class="btn btn-danger">Delete</button></a></td> <!--btn btn-danger is a bootstrap button to show danger-->  
+            <td><a href="delete.php?del=<?php echo $user_id?>"><button class="btn btn-danger">Delete</button></a></td> <!--btn btn-danger is a bootstrap button to show danger-->
+            <td><a href="update.php?update=<?php echo $user_id?>"><button class="btn btn-primary">Update</button></a></td>
         </tr>  
   
         <?php } ?>  
-  
+
 
     </table>  
         </div>  

@@ -1,55 +1,12 @@
 <?php
-include('../resources/header.php');
+
 include('../resources/config.php');
- //$con = mysqli_connect("localhost","root","oracle","weforwomen") or die("Unable to connect");
-
-if(isset($_POST['submit']))
-{
-
-    // $file = $_FILES['file'];
-    // $filename = $_FILES['file']['name'];
-    // $fileTmpLoc = $_FILES['file']['tmp_name'];
-    // $fileExt = explode('.',$filename);
-    // $fileActualExt = strtolower(end($fileExt));
-    // $allowed = array('jpg','jpeg','png','pdf');
-
-    // if(in_array($fileActualExt, $allowed)){
-       
-    //     $fileDestination = "uploads/".$filename;
-    //     move_uploaded_file($fileTmpLoc, $fileDestination);
-    // }
-
-
-    $job_title = mysqli_real_escape_string($con, $_POST['job-title']);
-    $organisation_id = 1;
-    $user_id = 0;
-    $job_sector = $_POST['job-sector'];  //field = sector
-    $job_desc = mysqli_real_escape_string($con, $_POST['job-desc']);
-    $state = $_POST['state'];
-    $city = $_POST['district']; 
-    $skills = mysqli_real_escape_string($con, $_POST['skills']);
-    $experience = $_POST['experience'];
-    $salary= $_POST['salary'];
-    $duration = $_POST['duration'];
-    $vacancy = $_POST['vacancy'];
-    // $job_type = $_POST['job-type'];
-
-    $query = "INSERT INTO job_post(job_post_user_id,job_post_org_id,job_post_title,job_post_sector, job_post_description, job_post_state,job_post_city,job_post_skills ,job_post_exp, job_post_salary, job_post_duration, job_post_vacancy) VALUES ($user_id, $organisation_id,'$job_title','$job_sector', '$job_desc', $state, $city,'$skills', $experience ,$salary, $duration,$vacancy)";
-
-    $result = mysqli_query($con, $query);
-    if($result){
-        echo "<script type='text/javascript'>window.alert('Successfully Posted !!!')</script>";
-    }
-    else{
-        echo "<script type='text/javascript'>window.alert('Unable to accept !!!')</script>";
-    }
-}
-
+include('../resources/header.php');
 ?>
-
-
 <!DOCTYPE html>
 <html>
+
+    
 <head>
     <meta charset="utf-8" />
     <title>Post a Job</title>
@@ -68,9 +25,9 @@ if(isset($_POST['submit']))
                     <label for="job-title">Project Title*</label>
                     <input type="text" class="form-control" name="job-title" id="job-title" placeholder = "e.g. Web Development" required>
                 </div>                
-                <div class="form-group">
+                <div class="form-group" id="orgDiv">
                     <label for="organisation">Organisation Name*</label>
-                    <input type="text" class="form-control" name="organisation" id="organisation" placeholder="some organisation" disabled>
+                    <input type="text" class="form-control" name="organisation" id="organisation" placeholder="some organisation">
                 </div>
 
                 <div class="form-group">
@@ -142,7 +99,7 @@ if(isset($_POST['submit']))
                     <div class="col-sm-8">
                         <div class="form-group">
                             <label for="salary">Salary (Rs)*</label>
-                            <input required type="number" class="form-control" name="salary" id="salary" required>
+                            <input required type="number" min="0" step="1" class="form-control" name="salary" id="salary" required>
                         </div>
                     </div>
 
@@ -182,13 +139,13 @@ if(isset($_POST['submit']))
                     <div class="col-sm-6"> 
                         <div class="form-group">
                             <label for="duration">Job Duration*</label>
-                            <input type="number" class="form-control" name="duration" id="duration" required placeholder="e.g. 5 days">
+                            <input type="number" min="0" step="1" class="form-control" name="duration" id="duration" required placeholder="e.g. 5 days">
                         </div>
                     </div>
                     <div class="col-sm-6"> 
                         <div class="form-group">
                             <label for="vacancy">Number of Vacancies*</label>
-                            <input type="number" class="form-control" name="vacancy" id="vacancy" required>
+                            <input type="number" min="0" step="1" class="form-control" name="vacancy" id="vacancy" required>
                         </div>
                     </div>
                 </div>
@@ -231,7 +188,86 @@ if(isset($_POST['submit']))
     }
 </script>
 <?php
+
+// unset($_SESSION['current_user_id']);
+// unset($_SESSION['current_org_id']);
+// $_SESSION['current_org_id'] = 1;
+// $_SESSION['current_user_id']= 5;
+
+ //$con = mysqli_connect("localhost","root","oracle","weforwomen") or die("Unable to connect");
+if(isset($_SESSION['current_user_id']) || isset($_SESSION['current_org_id'])){
+    if(isset($_SESSION['current_org_id'])){
+        $orgId = $_SESSION['current_org_id'];
+        $queryOrg = "select * from organization where org_id = ".$orgId;
+        $resultOrg = mysqli_query($con, $queryOrg);
+        while($rowOrg = mysqli_fetch_array($resultOrg)){
+            $orgName = $rowOrg['org_username'];
+        }
+        ?>
+        <script> document.getElementById('organisation').value = "<?php echo $orgName;?>"
+         document.getElementById('organisation').disabled = true;
+        </script>
+        <?php
+    }
+    else{
+     echo "<script>document.getElementById('orgDiv').style.display='none';</script>";
+    }
+}
+else{
+    
+    echo "<script>
+    alert('You Must be Logged In !!!');
+    window.location.href = 'get-job.php';</script>";
+    exit();
+}
+
+
+if(isset($_POST['submit']))
+{
+
+    // $file = $_FILES['file'];
+    // $filename = $_FILES['file']['name'];
+    // $fileTmpLoc = $_FILES['file']['tmp_name'];
+    // $fileExt = explode('.',$filename);
+    // $fileActualExt = strtolower(end($fileExt));
+    // $allowed = array('jpg','jpeg','png','pdf');
+
+    // if(in_array($fileActualExt, $allowed)){
+       
+    //     $fileDestination = "uploads/".$filename;
+    //     move_uploaded_file($fileTmpLoc, $fileDestination);
+    // }
+
+
+    $job_title = mysqli_real_escape_string($con, $_POST['job-title']);
+
+    $organisation_id = isset($_SESSION['current_org_id'])? $_SESSION['current_org_id'] : 0;
+    $user_id = isset($_SESSION['current_user_id']) ? $_SESSION['current_user_id'] : 0;
+    $job_sector = $_POST['job-sector'];  //field = sector
+    $job_desc = mysqli_real_escape_string($con, $_POST['job-desc']);
+    $state = $_POST['state'];
+    $city = $_POST['district']; 
+    $skills = mysqli_real_escape_string($con, $_POST['skills']);
+    $experience = $_POST['experience'];
+    $salary= $_POST['salary'];
+    $duration = $_POST['duration'];
+    $vacancy = $_POST['vacancy'];
+    // $job_type = $_POST['job-type'];
+
+    $query = "INSERT INTO job_post(job_post_user_id,job_post_org_id,job_post_title,job_post_sector, job_post_description, job_post_state,job_post_city,job_post_skills ,job_post_exp, job_post_salary, job_post_duration, job_post_vacancy) VALUES ($user_id, $organisation_id,'$job_title','$job_sector', '$job_desc', $state, $city,'$skills', $experience ,$salary, $duration,$vacancy)";
+
+    $result = mysqli_query($con, $query);
+    if($result){
+        echo "<script type='text/javascript'>window.alert('Successfully Posted !!!')</script>";
+    }
+    else{
+        echo "<script type='text/javascript'>window.alert('Unable to accept !!!')</script>";
+    }
+}
 include('../resources/footer.php');
 ?>
+
+
 </body>
 </html>
+

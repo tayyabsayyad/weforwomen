@@ -18,10 +18,13 @@
     position: relative;
 }
 .job-title{
+    cursor: pointer;
     text-transform:uppercase;
     font-weight:bolder;
-    font-size:large;
-    
+    font-size:large;  
+}
+.job-title:hover{
+    text-decoration: underline;
 }
 .job-provider{
     color:#ff7800;

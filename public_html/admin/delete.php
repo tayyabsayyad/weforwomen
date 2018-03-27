@@ -1,8 +1,9 @@
 <?php
 
 include("../resources/config.php");  
-$delete_id=$_POST['del'];  
-$delete_query="delete from register WHERE id='$delete_id'";//delete query  
+$delete_id=$_GET['del']; 
+echo $delete_id; 
+$delete_query="delete from register WHERE user_id='$delete_id'";//delete query  
 $run=mysqli_query($con,$delete_query);  
 if($run)  
 {  

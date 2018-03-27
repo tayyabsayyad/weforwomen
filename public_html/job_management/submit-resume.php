@@ -1,12 +1,12 @@
 <?php
 session_start();
-$_SESSION['current_user_id'] = 1;
-
+// $_SESSION['current_user_id'] = 1;
+$user_id = $_SESSION['current_user_id'];
 
 
 // unset($_SESSION['current_user_id']);
 // unset($_SESSION['job_id']);
-if(isset($_SESSION['job_id'])){
+if(isset($_SESSION['current_user_id'])){
     if(isset($_SESSION['job_id'])){
 
     }
@@ -16,12 +16,10 @@ if(isset($_SESSION['job_id'])){
     }
 }
 else{
-    echo "<script type='text/javascript'>alert('You Must be Logged in');
-    window.location.href='get-job.php';
-    </script>";
-    
-    
+    header('Location:get-job.php');
+    exit();
 }
+
 
 if(isset($_POST['submit'])){
 	include('../resources/config.php');
@@ -54,7 +52,7 @@ if(isset($_POST['submit'])){
         </script>";
     }
 
-    $query = "insert into job_application(job_app_user_id,job_app_org_id, job_post_id, job_app_resume_dir, job_app_message) values(0, 1, $job_post_id,'$fileDestination', '$message')";
+    $query = "insert into job_application(job_app_user_id,job_app_org_id, job_post_id, job_app_resume_dir, job_app_message) values($user_id, 1, $job_post_id,'$fileDestination', '$message')";
     $result = mysqli_query($con, $query);
     if($result){
         echo "<script type='text/javascript'>alert('Resume Submitted Succesfully !!!');</script>";
@@ -97,7 +95,7 @@ if(isset($_POST['submit'])){
                         <textarea class="form-control" rows="5" style="max-width:100%" name="message-textarea" id="message-textarea" placeholder = "Any Message (optional)" value=""></textarea>
                     </div>
                     <div class="row">
-                        <div class="col-sm-6"><button type="submit" style="width:100%" class="btn btn-success" name="submit">Submit</button></div>
+                        <div class="col-sm-6"><button type="submit" style="width:100%;margin-bottom:5px" class="btn btn-success" name="submit">Submit</button></div>
                         <div class="col-sm-6"><a href="get-job.php" class="btn btn-danger" style="width:100%">Cancel</a></div>
                     <div>
                     

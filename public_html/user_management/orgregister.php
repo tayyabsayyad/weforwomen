@@ -50,6 +50,7 @@ if (isset($_POST['submit'])) {
 
 		$query_run = mysqli_query($con, $sql);
 		if($query_run){
+			 
 			echo '<script type="text/javascript">alert("User registered"); </script>';
 		}else{
 				echo '<script type="text/javascript">alert("User not registered"); </script>';

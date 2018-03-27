@@ -34,11 +34,11 @@ include ('resources/header.php');
 
 
 
-<div class="container-fluid">
+<!-- <div class="container-fluid"> -->
   
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
-    <ol class="carousel-indicators">
+    <ol class="carousel-indicators" >
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"></li>
       <li data-target="#myCarousel" data-slide-to="2"></li>
@@ -67,7 +67,7 @@ include ('resources/header.php');
         <div class="item">
         <img src="p5.jpg" style="width:100%;">
       </div>
-    </div>
+  <!--   </div> -->
 
     <!-- Left and right controls -->
     <a class="left carousel-control" href="#myCarousel" data-slide="prev">

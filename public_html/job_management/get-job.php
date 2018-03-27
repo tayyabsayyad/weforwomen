@@ -1,15 +1,18 @@
 <?php
-session_start();
-include('../resources/config.php');
-include('../resources/header.php');
 
+include('../resources/config.php');
+
+
+include('../resources/header.php');
 
 //$con = mysqli_connect("localhost","root","oracle","weforwomen") or die("Unable to connect");
 
 
-
 ////////////////////////////////////
-
+if(isset($_SESSION['current_org_id'])){
+    header('Location:../index.php');
+    exit();
+}
 
     $job_title= empty($_POST['job-title']) ? "" :$_POST['job-title'];
 
@@ -64,71 +67,35 @@ include('../resources/header.php');
 
     $result2 = mysqli_query($con, $searchQuery2);
 
+/// to view details of job
 
+    if(isset($_POST['submit3'])){
+        $gyan = $_POST['job-id3'];
+        $_SESSION['job_id'] = $gyan;
+        header("Location:profile.php");
+        exit();
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// if(isset($_POST['submit2'])){
-//     $experience = $_POST['experience'];
-//     $city = $_POST['city'];
-//     $job_title = $_POST['job-title'];
-
-//   // //////////////////////////////////////////////  
-  
-//     $words = explode(' ',$job_title);
-//     $searchQuery =  "SELECT * FROM job_post WHERE ";
-//     $conds = array();
-//     foreach ($words as $val) {
-//         $conds[] = " job_post_title LIKE '%".$val."%'";
-//     }
-//     $searchQuery .= implode(' OR ', $conds);
-//     $searchQuery .= " OR job_post_exp >=".$experience. " OR job_post_city =".$city;
-// }
-
+    
+// to apply for the job
 
 if(isset($_POST['submit'])){
-    $_SESSION['job_id'] = $_POST['job-id'];
-    header("Location:submit-resume.php");
-    exit();
+    if(isset($_SESSION['current_user_id'])){
+        $_SESSION['job_id'] = $_POST['job-id'];
+        header("Location:submit-resume.php");
+        exit();
+    }
+    else{
+        echo "<script>alert('You must be Logged In !!!');
+        window.location.href = 'get-job.php';
+        </script>";
+        
+    }
 }
 ?>
-<!-- is_numeric() -->
 
 
 
-
-
-<!-- <?php
-if(isset($_POST['apply'])){
-
-}
-?> -->
 
 
 
@@ -210,6 +177,12 @@ if(isset($_POST['apply'])){
         $stateName = mysqli_fetch_array($resultState);
 
         $time = substr($rows1['job_post_start_time'],0,10);
+       
+        $orgIds = $rows1['job_post_org_id'];
+        $queryOrg = "select * from organization where org_id =".$orgIds;
+        $orgNameResult = mysqli_query($con, $queryOrg);
+        $row5 = mysqli_fetch_array($orgNameResult);
+        $orgName = $row5['org_name'];
 
         // job organisation and individual has to be managed
 
@@ -217,8 +190,8 @@ if(isset($_POST['apply'])){
         <div class=\"col-sm-offset-2 col-sm-8\">
             <div class=\"job-content\">
                 <div class=\"job-brief\">
-                    <div class=\"job-title\">".$rows1['job_post_title']."</div>
-                    <div class=\"job-provider\">".$rows1['job_post_org_id']."</div>    
+                    <div class=\"job-title\" id=\"".$rows1['job_post_id']."a\" onclick=\"profileFunction(this)\">".$rows1['job_post_title']."</div>
+                    <div class=\"job-provider\">".$orgName."</div>    
                     <div class=\"job-desc\">".$rows1['job_post_description']."</div>
                     <div class=\"job-desc\">Skills : ".$rows1['job_post_skills']."</div>
                     <div class=\"job-location\">".$cityName[0].', '.$stateName[0]."</div>
@@ -230,6 +203,7 @@ if(isset($_POST['apply'])){
         </div>";
 
         echo $job_box;
+
     }
     
     while($rows2 = mysqli_fetch_array($result2)){
@@ -246,6 +220,12 @@ if(isset($_POST['apply'])){
         $stateName = mysqli_fetch_array($resultState);
 
         $time = substr($rows2['job_post_start_time'],0,10);
+        
+        $orgIds = $rows2['job_post_org_id'];
+        $queryOrg = "select * from organization where org_id =".$orgIds;
+        $orgNameResult = mysqli_query($con, $queryOrg);
+        $row5 = mysqli_fetch_array($orgNameResult);
+        $orgName = $row5['org_name'];
 
         // job organisation and individual has to be managed
 
@@ -253,8 +233,8 @@ if(isset($_POST['apply'])){
         <div class=\"col-sm-offset-2 col-sm-8\">
             <div class=\"job-content\">
                 <div class=\"job-brief\">
-                    <div class=\"job-title\">".$rows2['job_post_title']."</div>
-                    <div class=\"job-provider\">".$rows2['job_post_org_id']."</div>     
+                    <div class=\"job-title\"> id=\"".$rows2['job_post_id']."a\" onclick=\"profileFunction(this)\">".$rows2['job_post_title']."</div>
+                    <div class=\"job-provider\">".$orgName."</div>     
                     <div class=\"job-desc\">".$rows2['job_post_description']."</div>
                     <div class=\"job-desc\">Skills : ".$rows2['job_post_skills']."</div>
                     <div class=\"job-location\">".$cityName[0].', '.$stateName[0]."</div>
@@ -310,12 +290,25 @@ if(isset($_POST['apply'])){
 
         
     }
+    
+    function profileFunction(element){
+        var cd = String(element.id);
+        var ef = Number(cd.slice(0, -1));
+        document.getElementById("job-id3").value = ef;
+        document.getElementById("submit3").click();
+    }
+
+
+
 </script>
 <form action="get-job.php" method="POST">
     <input type = "number" name="job-id" hidden id="job-id"/>
     <input type="submit" name="submit" id="submit" hidden/>
 </form>
-
+<form action="get-job.php" method="POST">
+    <input type = "number" name="job-id3" hidden id="job-id3"/>
+    <input type="submit" name="submit3" id="submit3" hidden/>
+</form>
 
 <?php
 include('../resources/footer.php');
