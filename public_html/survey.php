@@ -1,1 +1,0 @@
-<script type="text/javascript">!function(t,e){"use strict";var r=function(t){try{var r=e.head||e.getElementsByTagName("head")[0],a=e.createElement("script");a.setAttribute("type","text/javascript"),a.setAttribute("src",t),r.appendChild(a)}catch(t){}};t.CollectId = "5ab7e0540873d442245a04d0",r("https://s3.amazonaws.com/collectchat/launcher.js")}(window,document);</script>
